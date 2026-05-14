@@ -1,0 +1,4 @@
+﻿我想要把这个论文代码改成自己论文创新点的代码。
+1、读取NEW_IDEAS中的创新点，实现错位鲁棒对齐,差异感知可信高频迁移,空间-频率双域稀疏融合三个创新点
+2、本文的论文是High-frequency structure transformer for magnetic resonance image super-resolution，一切基座以他为准
+3、三个创新点基本都是来自其他论文的，本论文和其他论文都是放在articles文件夹中，请遇到没有见过的模块名字的时候，自行去别的论文中搜索，并且结合他们的论文中的对应模块来写代码

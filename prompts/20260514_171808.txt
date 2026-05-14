@@ -1,0 +1,1 @@
+﻿请阅读PDF论文，告诉我为何代码中训练的train_ixit_spsr_release_s4_d96_w5_n3的json中只配置了IXI/T1的路径，没有配置T2的，论文中不是有T2 T1多对比度吗
