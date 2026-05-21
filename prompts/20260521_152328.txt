@@ -1,0 +1,1 @@
+[network_release.py](models/network_release.py) 请阅读代码，看看跟论文对应的intra head attention和inter head attention分别对应那些代码

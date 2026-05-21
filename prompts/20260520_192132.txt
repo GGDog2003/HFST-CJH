@@ -1,0 +1,1 @@
+告诉我DifferenceAwareRegistration是怎么一步一步实现抗错位对齐的

@@ -1,0 +1,1 @@
+为什么 confidence = self.confidence_head(torch.cat([target_high, ref_high, high_gap, diff_map], dim=1))，把这几个concat一下，然后输入到confidence head中，然后这个head中就是卷积激活一下，就能够生成可信度图了？？？？？

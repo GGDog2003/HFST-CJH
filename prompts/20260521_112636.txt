@@ -1,0 +1,3 @@
+﻿[network_release.py](models/network_release.py) 在这个代码中，# 先用结构先验支路和参考支路做柔性错位对齐。
+        aligned_ref, diff_map, _ = self.darm(p_in, Fc_in)
+为啥是输入的是梯度图+参考图？这两个进行对齐有何意义，难道不应该是lr图和参考图直接对齐吗

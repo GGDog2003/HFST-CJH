@@ -1,0 +1,1 @@
+self.Select = Select(in_nc=in_channel, out_nc=hidden_dim)这行代码在干嘛

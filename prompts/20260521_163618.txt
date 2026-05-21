@@ -1,0 +1,16 @@
+﻿结合IM2CE核心注意力改进_20260520中的创新点，以及```mermaid
+flowchart LR
+    A[目标特征 Ft] --> B[共享前融合]
+    R[参考特征 Fr] --> B
+    Gt[目标梯度特征] --> C[Gradient-IM2CE]
+    Gr[参考梯度特征] --> C
+    B --> C
+    B --> D[Frequency-IM2CE]
+    C --> E[双域冲突裁决融合]
+    D --> E
+    E --> F[输出增强特征 Fo]
+```
+这个mermaid图，把network_release.py中的IM2CE模块修改了，等于说不是这样写 # 在 HFST 原始结构融合后追加双域稀疏融合，补强频率域建模能力。
+        FL0 = self.ddsf(FL0, fused_high, confidence, diff_map)
+
+而是把双域的代码融入到注意力中去，按创新点的md文档做双域的注意力
