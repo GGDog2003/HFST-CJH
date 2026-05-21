@@ -147,7 +147,7 @@ def main(json_path='options/x3/train_ixit_spsr_v2_9_b_m_e_f_s3_d32_w5_n1.json'):
     # ----------------------------------------
     print('start train')
     best_save_psnr = 22
-    for epoch in range(20):
+    for epoch in range(10):
         if current_step > 10 * 10000:
             break
 
