@@ -233,7 +233,7 @@ class ModelPlain(ModelBase):
     def test(self):
         self.netG.eval()
         with torch.no_grad():
-            if self.opt_train['tile'] is not None:
+            if self.opt_train['tile'] is not None and len(self.L) == 1:
                 tile = self.opt_train['tile']
                 all_E = []
                 all_L = []
@@ -256,8 +256,9 @@ class ModelPlain(ModelBase):
                         for w_idx in w_idx_list:
                             in_patch = L[..., h_idx:h_idx + tile, w_idx:w_idx + tile]
                             self.netG_forward(in_patch)
+                            patch_E = self.E[0] if isinstance(self.E, (list, tuple)) else self.E
                             E[..., h_idx * self.scale:(h_idx + tile) * self.scale,
-                            w_idx * self.scale:(w_idx + tile) * self.scale].add_(E)
+                            w_idx * self.scale:(w_idx + tile) * self.scale].copy_(patch_E)
                     E = E[:, :, :h_old * self.scale, :w_old * self.scale]
                     L = L[:, :, :h_old, :w_old]
                     all_E.append(E)
@@ -265,6 +266,8 @@ class ModelPlain(ModelBase):
                 self.E = all_E
                 self.L = all_L
             else:
+                if self.opt_train['tile'] is not None and len(self.L) > 1:
+                    print('Tile inference is skipped for multi-input models to avoid incorrect patch stitching.')
                 self.netG_forward()
 
     # ----------------------------------------

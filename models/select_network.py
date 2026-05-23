@@ -8,6 +8,9 @@ import torch
 # from models.network_swinir import SwinIR
 # from models.network_spsr_v2_9_b_m_e_f import SPSRNetv2_9_b_m_e_f
 from models.network_release import SPSRNet_release
+from models.network_release_bak import SPSRNet_release as SPSRNet_release_baseline
+from models.network_release_hybrid import SPSRNet_release_hybrid
+from models.network_release_refine import SPSRNet_release_refine
 # --------------------------------------------
 # Generator, netG, G
 # --------------------------------------------

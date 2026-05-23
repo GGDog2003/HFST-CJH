@@ -1,0 +1,1 @@
+[testlog_14000epoch](logs/testlog_14000epoch) 阅读这个log，分析为啥HH图像大部分都只有十几PSNR的原因，并提出改进意见。意见写成md文档放在prompts文件夹下，不要修改代码！！不要修改代码！！！不要修改代码！！！

@@ -8,7 +8,8 @@
     'tile': 60,
     "path": {
         "root": './',
-        "pretrained_netG": 'MR/train_ixit_spsr_release_s4_d96_w5_n3/models/best/best_G.pth',
+        "pretrained_netG": 'MR/18000_G.pth',
+
         "pretrained_netE": null
     },
 
@@ -17,12 +18,15 @@
             "name": "test_dataset",
             "dataset_type": "DatasetIXIT",
             "H_size": 240,
-            "dataroot_H": ["/home/blf/IXI/T1/test/"]
+            "normalize_mode": "independent_percentile",
+            "normalize_percentiles": [0.5, 99.5],
+            "lr_renormalize": false,
+            "dataroot_H": ["D:/python/MRI_SR_DATASETS/IXI/T1/test/"]
         }
     },
 
     "netG": {
-        "net_type": "SPSRNet_release",
+        "net_type": "SPSRNet_release_hybrid",
         "img_size": 60,
         "in_channel": 1,
         "out_channel": 1,

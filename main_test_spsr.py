@@ -7,6 +7,24 @@ from models import *
 from utils import *
 
 
+def load_model_weights(model, checkpoint_path, device):
+    # 读取 checkpoint 文件，参数 checkpoint_path 表示模型权重路径。
+    checkpoint = torch.load(checkpoint_path, map_location=device)
+    # 兼容 {'model': state_dict} 这类保存格式，参数 checkpoint 表示已加载的权重对象。
+    state_dict = checkpoint['model'] if isinstance(checkpoint, dict) and 'model' in checkpoint else checkpoint
+    # 优先走新模型的部分加载逻辑，参数 model 表示待加载的网络。
+    if hasattr(model, 'load_pretrained'):
+        # 调用模型自定义的权重映射逻辑，三个返回值分别表示命中数、模型键数、checkpoint 键数。
+        matched_count, model_key_count, checkpoint_key_count = model.load_pretrained(state_dict)
+        # 打印部分加载统计，参数 matched_count、model_key_count、checkpoint_key_count 分别表示加载统计量。
+        print('Loaded pretrained params: {:d}/{:d} model keys matched from {:d} checkpoint keys.'.format(
+            matched_count, model_key_count, checkpoint_key_count))
+        # 直接返回，避免再走严格加载。
+        return
+    # 对无自定义加载逻辑的模型保持原有严格加载行为，参数 state_dict 表示 checkpoint 权重字典。
+    model.load_state_dict(state_dict, strict=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--opt', type=str, default='options/test/x4/test_braint_spsr_release_s4_d32_w5_n1.json')
@@ -28,8 +46,8 @@ def main():
 
     model = select_G(opt)
 
-    pretrained_model = torch.load(opt['path']['pretrained_netG'], map_location=device)
-    model.load_state_dict(pretrained_model, strict=True)
+    # 加载预训练权重，参数 model 表示网络实例，参数 pretrained_netG 表示权重路径。
+    load_model_weights(model, opt['path']['pretrained_netG'], device)
 
     model = model.to(device)
     opt['datasets']['test']['scale'] = opt['scale']

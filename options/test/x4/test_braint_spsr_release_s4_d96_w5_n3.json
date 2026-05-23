@@ -16,7 +16,7 @@
             "name": "test_dataset",
             "dataset_type": "DatasetBrainSRT",
             "H_size": 240,
-            "dataroot_H": "../../Task01_BrainTumour/imagesTs/"
+            "dataroot_H": "D:/python/MRI_SR_DATASETS/Task01_BrainTumour/imagesTs/"
         }
     },
 

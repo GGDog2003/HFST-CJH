@@ -1,0 +1,30 @@
+用户消息 1：
+# AGENTS.md instructions for D:\python\HFST\HFST-CJH
+
+<INSTRUCTIONS>
+# Global Rules
+
+1、始终使用中文回答。
+
+2、在修改任何文件前，先用 1-2 句话说明准备做什么。
+
+3、完成任务后，给出：
+
+- 改了什么
+- 有没有验证
+- 还剩什么风险
+
+4、所有我发给你的对话都在当前目录的/prompts下保存成时间命名的txt，以便我后续评估我提示词的好差
+
+5、我擅长java和vue开发，所以java和vue项目代码注释只需要每一块代码加注释即可。其余语言代码请每一行都加注释，注释风格为做了什么，每个参数是啥意思
+</INSTRUCTIONS><environment_context>
+  <cwd>D:\python\HFST\HFST-CJH</cwd>
+  <shell>powershell</shell>
+  <current_date>2026-05-23</current_date>
+  <timezone>Asia/Shanghai</timezone>
+</environment_context>
+
+用户消息 2：
+[CJH-2](logs/CJH-2/) [CJH-3](logs/CJH-3/) 请阅读以下的log文件。CJH2中，GUYS的PSNR很高但HH的PSNR很低。CJH3经过网络架构改良后，HH的PSNR确实变高了不少，但GUYS的PSNR降低了，结果导致平均PSNR也降低了。现在要求：
+1、修改网络架构，使得HH维持CJH3水平，GUYS维持CJH2水平
+2、只能修改网络架构，不能针对某个数据集中的某类样本做特殊待遇调整

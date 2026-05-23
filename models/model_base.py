@@ -168,6 +168,12 @@ class ModelBase():
             state_dict_old = torch.load(load_path)
             if param_key in state_dict_old.keys():
                 state_dict_old = state_dict_old[param_key]
+            if hasattr(network, 'load_pretrained'):
+                matched_count, model_key_count, ckpt_key_count = network.load_pretrained(state_dict_old)
+                print('Loaded pretrained params: {:d}/{:d} model keys matched from {:d} checkpoint keys.'.format(
+                    matched_count, model_key_count, ckpt_key_count))
+                del state_dict_old
+                return
             state_dict = network.state_dict()
             new_state_dict={}
             for k, v in state_dict_old.items():
@@ -176,6 +182,8 @@ class ModelBase():
                         new_state_dict[k]=v
             state_dict.update(new_state_dict)
             network.load_state_dict(new_state_dict,strict=strict)
+            print('Loaded pretrained params: {:d}/{:d} model keys matched from {:d} checkpoint keys.'.format(
+                len(new_state_dict), len(state_dict), len(state_dict_old)))
             del state_dict_old, state_dict
 
     # ----------------------------------------

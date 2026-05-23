@@ -1,7 +1,7 @@
 import math
 
 import torch
-from timm.models.layers import trunc_normal_
+from timm.layers import trunc_normal_
 from torch import nn
 from torch.nn import functional as F
 

@@ -1,0 +1,26 @@
+# AGENTS.md instructions for D:\python\HFST\HFST-CJH
+
+<INSTRUCTIONS>
+# Global Rules
+
+1、始终使用中文回答。
+
+2、在修改任何文件前，先用 1-2 句话说明准备做什么。
+
+3、完成任务后，给出：
+
+- 改了什么
+- 有没有验证
+- 还剩什么风险
+
+4、所有我发给你的对话都在当前目录的/prompts下保存成时间命名的txt，以便我后续评估我提示词的好差
+
+5、我擅长java和vue开发，所以java和vue项目代码注释只需要每一块代码加注释即可。其余语言代码请每一行都加注释，注释风格为做了什么，每个参数是啥意思
+</INSTRUCTIONS><environment_context>
+  <cwd>D:\python\HFST\HFST-CJH</cwd>
+  <shell>powershell</shell>
+  <current_date>2026-05-22</current_date>
+  <timezone>Asia/Shanghai</timezone>
+</environment_context>
+
+刚才在执行这段的时候突然断联了，继续
