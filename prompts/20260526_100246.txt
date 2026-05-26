@@ -1,0 +1,1 @@
+﻿[train_ixit_spsr_x2.json](options/train/x2/train_ixit_spsr_x2.json) [train_ixit_spsr_release_s4_d96_w5_n3.json](options/train/x4/train_ixit_spsr_release_s4_d96_w5_n3.json) 阅读这几个文件，一个是超分倍率X4一个是X2。目前X4的已经达到了论文客观水平，但你可以阅读x2的train.log这个文件，发现跑了300多轮的平均PSNR才28点几，是不是我配置文件哪里不匹配了？请先给我指出来，不要修改代码

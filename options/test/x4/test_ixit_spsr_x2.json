@@ -8,7 +8,7 @@
     'tile': 60,
     "path": {
         "root": './',
-        "pretrained_netG": 'MR/82000_G.pth',
+        "pretrained_netG": 'MR/60000_G.pth',
 
         "pretrained_netE": null
     },
@@ -34,7 +34,7 @@
         "window_size": 5,
         "layer_num":3,
         "norm_layer": null,
-        "upscale": 4,
+        "upscale": 2,
         "upsample": "pixelshuffle"        // "pixelshuffle" | "pixelshuffledirect" | "nearest+conv" | null
     }
 }
