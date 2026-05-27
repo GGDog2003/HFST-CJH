@@ -1,0 +1,8 @@
+[Saved At]
+2026-05-27T10:51:11
+
+[Project Root]
+D:\python\HFST\HFST-CJH
+
+[User Prompt]
+[network_release_hybrid.py](models/network_release_hybrid.py) [network_release原文.py](models/network_release原文.py) 对比原文，hydrid修改了哪些网络架构，着重介绍一下IM2CE是怎么改的

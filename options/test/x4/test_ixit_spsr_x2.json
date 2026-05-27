@@ -1,14 +1,14 @@
 {
     // classical image sr
-    "task": "test_ixit_spsr_release_s4_d96_w5_n3",
-    "scale": 4,       // broadcast to "datasets"
+    "task": "test_ixit_spsr_x2",
+    "scale": 2,       // broadcast to "datasets"
     "n_channels": 1,
     "maxn": 156,
     "minn": 0,
-    'tile': 60,
+    'tile': 120,
     "path": {
         "root": './',
-        "pretrained_netG": 'MR/60000_G.pth',
+        "pretrained_netG": 'MR/9000_G.pth',
 
         "pretrained_netE": null
     },
@@ -27,7 +27,7 @@
 
     "netG": {
         "net_type": "SPSRNet_release_hybrid",
-        "img_size": 60,
+        "img_size": 120,
         "in_channel": 1,
         "out_channel": 1,
         "hidden_dim": 96,
